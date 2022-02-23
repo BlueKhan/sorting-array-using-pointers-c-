@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+void sort(int *p,int *q,int a[5])
+{
+    int temp=0;
+    int j=0;
+    for(int i=0;i<5;i++)
+    {
+        q=&a[i+1];
+        for(j=i;j<5;j++)
+        {
+            if(*q<*p)
+            {
+                temp=*q;
+                *q=*p;
+                *p=temp;
+            }
+            q++;
+        }
+        p++;
+    }
+    
+}
+int main()
+{
+    int arr[5];
+    for(int i=0;i<5;i++)
+    {
+        cout<<"enter number:";
+        cin>>arr[i];
+    }
+    cout<<"sorted array:";
+    sort(&arr[0],&arr[1],arr);
+    for(int i=0;i<5;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    return 0;
+}
